@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'rest_framework',
 
     # Apps within this repository
-    '{{ cookiecutter.initial_app_name }}'
+    '{{ cookiecutter.initial_app_slug }}'
 ]
 
 MIDDLEWARE = [

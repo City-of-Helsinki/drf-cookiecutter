@@ -15,7 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.views.generic.base import RedirectView
+
+from {{cookiecutter.initial_app_slug}}.api import APIRouter
+
+admin.autodiscover()
+
+router = APIRouter()
+
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^v1/', router.urls),
+    url(r'^$', RedirectView.as_view(url='v1/'))
 ]
